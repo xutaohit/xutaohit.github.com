@@ -1,46 +1,40 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: Index
+header: Posts By Index
+group: navigation
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
-
-## Update Author Attributes
-
-In `_config.yml` remember to specify your own data:
+<div class="content-cnt">
+<div class="ui-grid-25 ui-grid-right content-top">  
+  <div class="ui-grid-23 violet-post clearfix">
+        <div class="violet-post-det clearfix">
+    <div class="ui-grid-16 violet-journal">
+        <h4 class="v-section-tit">Last Journal</h4>
+        {% for rpost in site.posts limit:5 %}
+        <article class="v-excerpt clearfix">
+            <div class="ui-grid-7 ui-grid-bottom">
+                <h3 class="v-excerpt-title"><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3>
+                <p class="v-date"><span>&#8227;</span><time pubdate="{{ rpost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ rpost.date | date_to_utc | date: "%Y-%m-%d" }}</time></p>
+            </div>
+            <div class="ui-grid-9 ui-grid-right v-excerpt-det">
+                <p>{{ rpost.description }}</p>
+                <p class="v-more"><a href="{{ rpost.url }}" title="Read More" rel="nofollow"><span>&#10149;</span>Read More</a></p>
+            </div>
+        </article><!-- //v-post-excerpt -->
+        {% endfor %}
+        {% for npost in site.posts limit:3 offset:5  %}             
+        <article class="v-post-list fn-clear">
+            <p class="v-date"><span>&#8227;</span><time pubdate="{{ npost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ npost.date | date_to_utc | date: "%Y-%m-%d" }}</time></p>
+            <h3 class="v-post-title"><a href="{{ npost.url }}" title="{{ npost.title }}" rel="bookmark">{{ npost.title }}</a></h3>
+        </article><!-- //v-post-list -->
+        {% endfor %}
+    </div><!-- //Journal -->
     
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
-
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
-
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
-
-## To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
-
-
+    {% include JB/aside.html %}
+    </div>
+    </div>
+</div>
+</div>
