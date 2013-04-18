@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 徐涛 BLOG
+title: Index
 tagline: 
 ---
 {% include JB/setup %}
