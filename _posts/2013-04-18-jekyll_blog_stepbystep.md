@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "jekyll_blog_stepbystep"
-description: ""
-category: 
-tags: []
+title: "github jekyll blog搭建步骤"
+description: "使用 jekyll搭建博客"
+category: blog
+tags: [jekyll, blog, 教程]
 ---
 {% include JB/setup %}
 
