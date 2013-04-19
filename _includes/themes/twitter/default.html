@@ -35,10 +35,99 @@
   </head>
 
   <body>
+
     <div class="navbar">
       <div class="navbar-inner">
-        <div class="container-narrow">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+        <div class="container">
+
+          <div class="violet-logo">
+                <div class="v-position-1">
+                    <div class="v-petal v-deg-0 v-color-1">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+                <div class="v-position-2">
+                    <div class="v-petal v-deg-60 v-color-2">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+                <div class="v-position-3">
+                    <div class="v-petal v-deg-120 v-color-3">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+                <div class="v-position-4">
+                    <div class="v-petal v-deg-180 v-color-4">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+                <div class="v-position-5">
+                    <div class="v-petal v-deg-240 v-color-5">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+                <div class="v-position-6">
+                    <div class="v-petal v-deg-300 v-color-6">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+            </div><!-- //violet-logo -->
+
+          <a class="brand" href="{{ HOME_PATH }}">HeiNiuhaha</a><!-- {{ site.title }} -->
           <ul class="nav">
             {% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
@@ -48,24 +137,26 @@
       </div>
     </div>
 
-    <div class="container-narrow">
+    <div class="container">
 
       <div class="content">
         {{ content }}
       </div>
-      <hr>
+
       <footer>
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+        <p>&copy; {{ site.author.name }} 2012 
           with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
           and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>
       </footer>
 
-    </div>
+    </div> <!-- /container -->
     <a class="v-fork-me" href="https://github.com/xutaohit/xutaohit.github.com" target="_blank" rel="nofollow">
         <img src="/assets/themes/twitter/img/forkme.png" alt="Fork me on GitHub">
     </a>
+
     {% include JB/analytics %}
+
     <script type="text/javascript" src="/assets/themes/twitter/js/code/prettify.js"></script>
     <script type="text/javascript" src="/assets/themes/twitter/js/jquery-1.8.0.min.js"></script>
     <script type="text/javascript">
@@ -73,7 +164,7 @@
           $("pre").addClass("prettyprint");//linenums 数字
           prettyPrint();
           $('.v-entry a').each(function(){
-            if($(this).attr("href").indexOf("heiniuhaha") == -1){
+            if($(this).attr("href").indexOf("xutaopb") == -1){
               $(this).attr("target", "_blank");
             }
           })
