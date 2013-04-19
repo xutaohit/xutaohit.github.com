@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title>{{ page.title }}-徐涛的随记...</title>
+    <meta name="generator" content="xutaoBlog" />
+    <meta name="keywords" content="{{ site.author.keywords }}" />
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
 
@@ -17,7 +19,7 @@
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-
+    <link href="{{ ASSET_PATH }}/js/code/prettify.css" rel="stylesheet" type="text/css" media="all">
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -60,7 +62,22 @@
       </footer>
 
     </div>
-
+    <a class="v-fork-me" href="https://github.com/xutaohit/xutaohit.github.com" target="_blank" rel="nofollow">
+        <img src="/assets/themes/twitter/img/forkme.png" alt="Fork me on GitHub">
+    </a>
     {% include JB/analytics %}
+    <script type="text/javascript" src="/assets/themes/twitter/js/code/prettify.js"></script>
+    <script type="text/javascript" src="/assets/themes/twitter/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+          $("pre").addClass("prettyprint");//linenums 数字
+          prettyPrint();
+          $('.v-entry a').each(function(){
+            if($(this).attr("href").indexOf("heiniuhaha") == -1){
+              $(this).attr("target", "_blank");
+            }
+          })
+        });
+      </script>
   </body>
 </html>
