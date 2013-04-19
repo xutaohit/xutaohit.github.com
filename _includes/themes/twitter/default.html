@@ -71,13 +71,14 @@
     {% include JB/analytics %}
 
     <script type="text/javascript" src="/assets/themes/twitter/js/code/prettify.js"></script>
-    <script type="text/javascript" src="/assets/themes/twitter/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript">
+        console.log(111);
         $(function(){
           $("pre").addClass("prettyprint");//linenums 数字
           prettyPrint();
           $('.v-entry a').each(function(){
-            if($(this).attr("href").indexOf("xutaopb") == -1){
+            if($(this).attr("href").indexOf("heiniuhaha") == -1){
               $(this).attr("target", "_blank");
             }
           })
