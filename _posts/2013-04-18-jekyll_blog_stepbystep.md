@@ -83,11 +83,8 @@ http://xxxxxxx.github.com  貌似现在是 github.io了
 ## blog的配置
 
 _config.yml 中的又用的设置
-
 permalink: /:categories/:year/:month/:day/:title  固定链接的格式
-
 BASE_PATH:设置你的基础url...你设置了CNAME这个留空就好
-
 其他的就是些 留言板和 分析的设置….
 
 ---
