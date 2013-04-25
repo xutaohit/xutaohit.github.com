@@ -523,7 +523,7 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
 .btn-navbar .icon-bar+.icon-bar{margin-top:3px;}
 .nav-collapse.collapse{height:auto;}
 .navbar .brand:hover{text-decoration:none;}
-.navbar .brand{float:left;display:block;font-family:"Helvetica Neue",Helvetica,'microsoft yahei ui', 'microsoft yahei','simhei',Arial,sans-serif; font-size: 50px;font-weight: bolder; color: #E4E2E3;line-height: 80px;margin: 10px 0 0 10px;}
+.navbar .brand{float:left;display:block;font-family:"Helvetica Neue",Helvetica,'microsoft yahei ui', 'microsoft yahei','simhei',Arial,sans-serif; font-size: 50px;font-weight: bolder; color: #cccccc;line-height: 80px;margin: 10px 0 0 10px;}
 .navbar .navbar-text{margin-bottom:0;line-height:40px;color:#999999;}.navbar .navbar-text a:hover{color:#ffffff;background-color:transparent;}
 .navbar .btn,.navbar .btn-group{margin-top:5px;}
 .navbar .btn-group .btn{margin-top:0;}
@@ -747,9 +747,9 @@ a.thumbnail:hover{border-color:#0088cc;-webkit-box-shadow:0 1px 4px rgba(0, 105,
 .v-entry h5,
 .v-entry h6 { margin: 0; padding: 0; font-family: "Times New Roman", Times ,serif;}
 .v-entry h1 { padding: 3px 0; font-size: 20px; line-height: normal; margin-bottom: 20px; color: #99ccff; font-weight: 700; border-bottom: 1px solid #e8e8e8; }
-.v-entry h2 { margin-bottom: 20px; color: #489620; padding: 3px 0; font-size: 18px; line-height: normal; border-bottom: 1px solid #e8e8e8; font-family: 700; }
-.v-entry h3 { font-size: 16px; font-weight: 700; line-height: 26px; color: #489620; border-bottom: 1px solid #e8e8e8; margin-bottom: 18px; margin-top: 1.5em; }
-.v-entry h4 { margin-bottom: 18px; font-size: 14px; font-weight: 700; color: #489620; line-height: 26px; text-transform: uppercase; }
+.v-entry h2 { margin-bottom: 20px; color: #99ccff; padding: 3px 0; font-size: 18px; line-height: normal; border-bottom: 1px solid #e8e8e8; font-family: 700; }
+.v-entry h3 { font-size: 16px; font-weight: 700; line-height: 26px; color: #99ccff; border-bottom: 1px solid #e8e8e8; margin-bottom: 18px; margin-top: 1.5em; }
+.v-entry h4 { margin-bottom: 18px; font-size: 14px; font-weight: 700; color: #99ccff; line-height: 26px; text-transform: uppercase; }
 .v-entry h5 { margin-bottom: 18px; color: #444; font-size: 14px; line-height: 26px; text-transform: uppercase; }
 .v-entry h6 { font-size: 13px; font-weight: 700; margin-bottom: 0.5em; color: #444; line-height: 26px; }
 .v-entry > h2:first-child, .v-entry > h1:first-child, .v-entry > h1:first-child + h2 { border: 0 none; }
