@@ -481,14 +481,14 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
 .navbar{overflow:visible;margin-bottom:18px;}
 .navbar-inner{padding-left:20px;padding-right:20px;
   border-top: 5px solid #323A41;
-  background: -moz-linear-gradient(top, #336699, #003366);
-  background: -webkit-gradient(linear, center top, center bottom, from(#336699), to(#003366));
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#336699, endColorstr=#003366)";
+  background: -moz-linear-gradient(top, #FFFFFF, #CCCCCC);
+  background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#CCCCCC));
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#FFFFFF, endColorstr=#CCCCCC)";
   background-color: #cccccc;
 }
 
 /** violet-logo **/
-.violet-logo { float: left; position:  relative; width: 66px; height:  66px; margin: 20px 0 12px 0px; -moz-border-radius: 33px 33px; -webkit-border-radius: 33px 33px; -o-border-radius: 33px 33px; border-radius: 33px 33px; }
+.violet-logo { float: left; position:  relative;}
 .v-position-1, .v-position-2, .v-position-3, .v-position-4, .v-position-5, .v-position-6, .v-position-7 { position: absolute; }
 .violet-logo .v-position-1 { top: 0; left: 23px;}
 .violet-logo .v-position-2 { top: 9px; right: 6px; }
