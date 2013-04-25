@@ -481,9 +481,9 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
 .navbar{overflow:visible;margin-bottom:18px;}
 .navbar-inner{padding-left:20px;padding-right:20px;
   border-top: 5px solid #323A41;
-  background: -moz-linear-gradient(top, #003399, #003366);
-  background: -webkit-gradient(linear, center top, center bottom, from(#003399), to(#003366));
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#003399, endColorstr=#003366)";
+  background: -moz-linear-gradient(top, #336699, #003366);
+  background: -webkit-gradient(linear, center top, center bottom, from(#336699), to(#003366));
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#336699, endColorstr=#003366)";
   background-color: #cccccc;
 }
 
