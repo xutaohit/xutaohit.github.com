@@ -1,13 +1,5 @@
----
-layout: post
-title: "macha chai 单元测试"
-description: "mocha作为测试框架,使用Chai作为断言工具….咖啡和茶…."
-category: 单元测试
-tags: [单元测试,mocha,chai]
----
-{% include JB/setup %}
+# 「高贵冷艳的JS单元测试」  之 mocha作为测试框架,使用Chai作为断言工具….咖啡和茶….
 
-# mocha作为测试框架,使用Chai作为断言工具….咖啡和茶….
 
 ---
 
@@ -47,74 +39,74 @@ Chai有很多种接口,可以让码农找到自己觉得舒服的方式..链式�
 
 #### node.js中
 
-```
-	$ npm install -g mocha //mac下要用sudo...不知为何..
-	$ npm install chai   //断言库
-	$ mkdir test
-	$ subl test/test.js	
-	$ mocha	//或者你写上文件名
-```
+
+    $ npm install -g mocha //mac下要用sudo...不知为何..
+    $ npm install chai   //断言库
+    $ mkdir test
+    $ subl test/test.js 
+    $ mocha //或者你写上文件名
+  
 
 在Node.js中使用这两个组件基本只需require进来
 
-```
-require("chai").should();
-//这里连Mocha的组件就不需要，因为在Node.js环境下，Mocha更像是一个“执行环境”，我们在安装了Mocha之后，会使用mocha命令，而不是node命令执行测试脚本
-```
-	
-	
+
+  require("chai").should();
+  //这里连Mocha的组件就不需要，因为在Node.js环境下，Mocha更像是一个“执行环境”，我们在安装了Mocha之后，会使用mocha命令，而不是node命令执行测试脚本
+
+  
+  
 test.js的内容
-	
-	var assert = require("assert") //加载断言的库 chai吧~
-	
-	//定义一组测试
-	describe('Array', function(){
-	  describe('#indexOf()', function(){
-	  	//某一类的测试
-	    it('should return -1 when the value is not present', function(){
-	    //测试的逻辑
-	      assert.equal(-1, [1,2,3].indexOf(5));
-	      assert.equal(-1, [1,2,3].indexOf(0));
-	    })
-	  })
-	})
+  
+    var assert = require("assert") //加载断言的库 chai吧~
+
+    //定义一组测试
+    describe('Array', function(){
+        describe('#indexOf()', function(){
+          //某一类的测试
+          it('should return -1 when the value is not present', function(){
+          //测试的逻辑
+            assert.equal(-1, [1,2,3].indexOf(5));
+            assert.equal(-1, [1,2,3].indexOf(0));
+          })
+        })
+    })
 
 
 #### 浏览器中
 
 在浏览器里使用Mocha时需要额外引入一个CSS文件，并在页面上放置一个id为mocha的div。同时，我们还需要使用代码设置Mocha的单元测试模式（例如上面是BDD模式），以及Chai的断言模式（例如上面是Should模式）。使用这种方式，便能得到一张漂亮的单元测试页面，它甚至可以查看当前测试的代码：
 
-```
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Unit Testing with Mocha and Chai</title>
-    <!-- Mocha -->
-    <link rel="stylesheet" href="mocha.css" />
-    <script src="mocha.js"></script>
-    <script>mocha.setup('bdd');</script>
-    <!-- Chai -->
-    <script src="chai.js"></script>
-    <script>chai.Should();</script>
-</head>
-<body>
-    <div id="mocha"></div>
-    <script>
-    //这里可以引入你的test.js文件..
-       describe("Array", function () {
-            it("should return true for array", function () {
-                _.isArray([]).should.equal(true);
+
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Unit Testing with Mocha and Chai</title>
+        <!-- Mocha -->
+        <link rel="stylesheet" href="mocha.css" />
+        <script src="mocha.js"></script>
+        <script>mocha.setup('bdd');</script>
+        <!-- Chai -->
+        <script src="chai.js"></script>
+        <script>chai.Should();</script>
+    </head>
+    <body>
+        <div id="mocha"></div>
+        <script>
+        //这里可以引入你的test.js文件..
+           describe("Array", function () {
+                it("should return true for array", function () {
+                    _.isArray([]).should.equal(true);
+                });
+                ... more tests ...
             });
             ... more tests ...
-        });
-        ... more tests ...
-    </script>
-    <script>
-        mocha.run();
-    </script>
-</body>
-</html>
-```
+        </script>
+        <script>
+            mocha.run();
+        </script>
+    </body>
+    </html>
+
 
 ---
 
@@ -149,25 +141,24 @@ Mocha支持多种风格的interface， 比如。。 **BDD**, **TDD**, and **expo
 
 就像这个样子。。。和自然语言一样的流畅。。。**好评！！！**
 
-```
-describe('Array', function(){
-  before(function(){
-    // ...
-  });
-  describe('#indexOf()', function(){
-    it('should return -1 when not present', function(){
-      [1,2,3].indexOf(4).should.equal(-1);
-    });
-  });
-});
-```
 
-```
-//或者...root级别的hooks..在全局状态下..每次的测试用例都执行了..
-beforeEach(function(){
-  console.log('before every test')
-})
-```
+    describe('Array', function(){
+      before(function(){
+        // ...
+      });
+      describe('#indexOf()', function(){
+        it('should return -1 when not present', function(){
+          [1,2,3].indexOf(4).should.equal(-1);
+        });
+      });
+    });
+
+
+    //或者...root级别的hooks..在全局状态下..每次的测试用例都执行了..
+    beforeEach(function(){
+        console.log('before every test')
+    })
+
 
 其他两个就不说了。。反正我不用。。。哇咔咔咔~~
 
@@ -178,77 +169,75 @@ beforeEach(function(){
 当测试同步的代码时,Mocha将要无视callback顺序执行下去
 例子
 
-```
-describe('Array', function(){
-  describe('#indexOf()', function(){
-    it('should return -1 when the value is not present', function(){
-      [1,2,3].indexOf(5).should.equal(-1);
-      [1,2,3].indexOf(0).should.equal(-1);
+
+    describe('Array', function(){
+      describe('#indexOf()', function(){
+        it('should return -1 when the value is not present', function(){
+          [1,2,3].indexOf(5).should.equal(-1);
+          [1,2,3].indexOf(0).should.equal(-1);
+        })
+      })
     })
-  })
-})
-```
+
 
 ---
 
 ### 异步的代码的测试
 在测试异步的代码的时候,调用一个回调函数在测试完成的时候,done()等这个函数执行完成之后,再继续测试
 
-```
-		describe('User', function(){
-		  describe('#save()', function(){
-		    it('should save without error',
-		    	function(done){
-		      		var user = new User('Luna');
-		      		user.save(function(err){
-		        		if (err) throw err;
-		        		done();
-		      		});
-		      		//或者这样调用 done() callback接受错误,可简写为user.save(done); 
-		    	})
-		  	})
-		})
-```	
+
+    describe('User', function(){
+      describe('#save()', function(){
+        it('should save without error',
+          function(done){
+              var user = new User('Luna');
+              user.save(function(err){
+                if (err) throw err;
+                done();
+              });
+              //或者这样调用 done() callback接受错误,可简写为user.save(done); 
+          })
+        })
+    })
 
 before(), after(), beforeEach(), afterEach() 可以让你把同步和异步的测试一样的处理,
 举个栗子 哇咔咔 数据库链接的例子吧…每次链接的的开始,或者终止,都进行一次测试.
 
-```
-describe('Connection', function(){
-  var db = new Connection
-    , tobi = new User('tobi')
-    , loki = new User('loki')
-    , jane = new User('jane');
-  beforeEach(function(done){
-  //每一次之前…db.clear之前都会调用.
-    db.clear(function(err){
-      if (err) return done(err); //异步
-      db.save([tobi, loki, jane], done); //异步
-    });
-  })
-  describe('#find()', function(){
-    it('respond with matching records', function(done){
-      db.find({ type: 'User' }, function(err, res){
-        if (err) return done(err);
-        res.should.have.length(3);
-        done();
+    describe('Connection', function(){
+      var db = new Connection
+        , tobi = new User('tobi')
+        , loki = new User('loki')
+        , jane = new User('jane');
+      beforeEach(function(done){
+      //每一次之前…db.clear之前都会调用.
+        db.clear(function(err){
+          if (err) return done(err); //异步
+          db.save([tobi, loki, jane], done); //异步
+        });
+      })
+      describe('#find()', function(){
+        it('respond with matching records', function(done){
+          db.find({ type: 'User' }, function(err, res){
+            if (err) return done(err);
+            res.should.have.length(3);
+            done();
+          })
+        })
       })
     })
-  })
-})
-```
 
 
 ---
-		
+    
 ### pending tests
 只是一个没有回调的describe就好
 
-	describe('Array', function(){
-	  describe('#indexOf()', function(){
-	    it('should return -1 when the value is not present') //显示正确..
-	  })
-	})
+    describe('Array', function(){
+        describe('#indexOf()', function(){
+            it('should return -1 when the value is not present') //显示正确..
+        })
+    })
+
 ---
 
 ### Exclusive tests 独有测试..  Inclusive tests 包含测试.
@@ -271,43 +260,39 @@ Chai的BDD的风格有两种风格!:expect和should。
 
 ### expect
 
-```
-var expect = require('chai').expect
-  , foo = 'bar'
-  , beverages = { tea: [ 'chai', 'matcha', 'oolong' ] };
-expect(foo).to.be.a('string');
-expect(foo).to.equal('bar');
-expect(foo).to.have.length(3);
-expect(beverages).to.have.property('tea').with.length(3);
-//定义输出: AssertionError: topic [answer]: expected 43 to equal 42.
-expect(answer, 'topic [answer]').to.equal(42);
-```
+    var expect = require('chai').expect
+      , foo = 'bar'
+      , beverages = { tea: [ 'chai', 'matcha', 'oolong' ] };
+    expect(foo).to.be.a('string');
+    expect(foo).to.equal('bar');
+    expect(foo).to.have.length(3);
+    expect(beverages).to.have.property('tea').with.length(3);
+    //定义输出: AssertionError: topic [answer]: expected 43 to equal 42.
+    expect(answer, 'topic [answer]').to.equal(42);
 
 ### should
 
-```
-var should = require('chai').should() //actually call the the function
-  , foo = 'bar'
-  , beverages = { tea: [ 'chai', 'matcha', 'oolong' ] };
-foo.should.be.a('string');
-foo.should.equal('bar');
-foo.should.have.length(3);
-beverages.should.have.property('tea').with.length(3);
-```
+    var should = require('chai').should() //actually call the the function
+      , foo = 'bar'
+      , beverages = { tea: [ 'chai', 'matcha', 'oolong' ] };
+    foo.should.be.a('string');
+    foo.should.equal('bar');
+    foo.should.have.length(3);
+    beverages.should.have.property('tea').with.length(3);
+
 
 有木有...should很自然….
 
 还有一点..shoule可以在Object.prototyoe上检测.
 
 例如说,你想测试一个对象是否存在
-```
-var should = require('chai').should();
-db.get(1234, function (err, doc) {
-  should.not.exist(err);
-  should.exist(doc);
-  doc.should.be.an('object');
-});
-```
+
+    var should = require('chai').should();
+    db.get(1234, function (err, doc) {
+      should.not.exist(err);
+      should.exist(doc);
+      doc.should.be.an('object');
+    });
 
 - should.exist
 - should.not.exist
@@ -327,5 +312,9 @@ db.get(1234, function (err, doc) {
 老赵的博文 推荐mocha和chai的配合进行测试 [链接](http://blog.zhaojie.me/2012/06/jscex-unit-tests-with-mocha-chai.html)
 [mocha](http://visionmedia.github.io/mocha/)
 [chai](http://chaijs.com/)
+
+
+
+
 
 
