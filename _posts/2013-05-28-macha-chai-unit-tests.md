@@ -1,4 +1,13 @@
-# 「高贵冷艳的JS单元测试」  之 mocha作为测试框架,使用Chai作为断言工具….咖啡和茶….
+---
+layout: post
+title: "Mocha with Chai"
+description: "mocha作为测试框架,使用Chai作为断言工具….咖啡和茶…."
+category: 单元测试
+tags: [单元测试, mocha, chai]
+---
+{% include JB/setup %}
+
+# mocha作为测试框架,使用Chai作为断言工具….咖啡和茶….
 
 
 ---
