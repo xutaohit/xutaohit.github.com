@@ -47,28 +47,29 @@ release之后就被销毁了,当>1的时候…你rerelease之后还是不等于0
 
 还有就是在 @property (retain)和@synthesize的默认实现
 
-
-		@interface ClassA : NSObject{
-			ClassB *objB;
-		}
-		-(ClassB *) getObjB;
-		-(void) setObjB:(ClassB *) value;
-		@end
-		@implementation ClassA
-		-(ClassB*) getObjB{
-	         return objB;
-		}
-		-(void) setObjB:(ClassB*) value{
-			if (objB != value){
-	      		[objB release];    //先取消再重新赋值并且添加retain
-	          objB = [value retain];
-	      }
-		}
-		-(void) dealloc
-		{//由于我们在class内部retain了一次（虽然是默认实现的），所以我们要在dealloc方法中release这个成员变量
-	    	[objB release];
-	      	[super dealloc];
-		}
+```
+@interface ClassA : NSObject{
+	ClassB *objB;
+}
+-(ClassB *) getObjB;
+-(void) setObjB:(ClassB *) value;
+@end
+@implementation ClassA
+-(ClassB*) getObjB{
+    return objB;
+}
+-(void) setObjB:(ClassB*) value{
+	if (objB != value){
+  		[objB release];    //先取消再重新赋值并且添加retain
+      objB = [value retain];
+  }
+}
+-(void) dealloc
+{//由于我们在class内部retain了一次（虽然是默认实现的），所以我们要在dealloc方法中release这个成员变量
+	[objB release];
+  	[super dealloc];
+}
+```
 
 
 #### 怎么做
