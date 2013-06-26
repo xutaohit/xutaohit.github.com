@@ -47,6 +47,7 @@ release之后就被销毁了,当>1的时候…你rerelease之后还是不等于0
 
 还有就是在 @property (retain)和@synthesize的默认实现
 
+
 		@interface ClassA : NSObject{
 			ClassB *objB;
 		}
@@ -68,6 +69,7 @@ release之后就被销毁了,当>1的时候…你rerelease之后还是不等于0
 	    	[objB release];
 	      [super dealloc];
 		}
+
 
 #### 怎么做
 传统的内存管理就是手动的内存管理,MRC好吧..其实只要做到三点,就可以比年内存泄露或者引用未知内存:
@@ -104,8 +106,10 @@ ARC是Objective-C编译器的特性，而不是运行时特性或者垃圾回收
 
 解释下:
 
+
 	//这里我们吧输入框中的问题,引用给colleague这个指针.
 	NSString *colleague = self.textField.text;
+
 	
 ![step1](http://ww2.sinaimg.cn/large/71aff86bjw1e61g5vapgtj20bk06v3yk.jpg)
 
@@ -136,7 +140,9 @@ ARC是Objective-C编译器的特性，而不是运行时特性或者垃圾回收
 
 但是呢...有个weak类型的 `weak` 类型的指针也可以指向对象，但是并不会持有该对象.
 
+
 	__weak NSString *weakName = self.textField.text
+
 	
 ![弱类型的引用](http://ww3.sinaimg.cn/large/71aff86bjw1e61i0qotzqj20a106ywei.jpg)
 
@@ -167,13 +173,13 @@ viewController中有一个strong指针指向它所负责管理的UITableView，�
 ---
 
 property也可以用strong或weak来标记，简单地把原来写retain和assign的地方替换成strong或者weak就可以了。
-	
+
+
 	@property (nonatomic, strong) NSString *firstName; 
 	@property (nonatomic, weak) id delegate; 
+
 	
 	
-
-
 #### ARC的缺陷…
 
 - 只适用于object-c的对象(继承自NSObject的对象.) 底层的无力...malloc()free()等…自行料理…
