@@ -75,9 +75,9 @@ release之后就被销毁了,当>1的时候…你rerelease之后还是不等于0
 #### 怎么做
 传统的内存管理就是手动的内存管理,MRC好吧..其实只要做到三点,就可以比年内存泄露或者引用未知内存:
 
-1. if需要保持一个对象,就对其发送retain
-2. 不用了就release or autorelease
-3. 对于每一个retain,alloc,和new的调用,都要有对应的release和autorelease对应!
+- if需要保持一个对象,就对其发送retain
+- 不用了就release or autorelease
+- 对于每一个retain,alloc,和new的调用,都要有对应的release和autorelease对应!
 
 但是呢...说的简单..只知道这些规则..难免在实际的使用中会犯错…那个屎代..有很多的插件可以帮助开发者发现问题..
 
@@ -107,10 +107,10 @@ ARC是Objective-C编译器的特性，而不是运行时特性或者垃圾回收
 
 解释下:
 
-
-	//这里我们吧输入框中的问题,引用给colleague这个指针.
-	NSString *colleague = self.textField.text;
-
+```
+//这里我们吧输入框中的问题,引用给colleague这个指针.
+NSString *colleague = self.textField.text;
+```
 	
 ![step1](http://ww2.sinaimg.cn/large/71aff86bjw1e61g5vapgtj20bk06v3yk.jpg)
 
@@ -141,9 +141,9 @@ ARC是Objective-C编译器的特性，而不是运行时特性或者垃圾回收
 
 但是呢...有个weak类型的 `weak` 类型的指针也可以指向对象，但是并不会持有该对象.
 
-
-	__weak NSString *weakName = self.textField.text
-
+```
+__weak NSString *weakName = self.textField.text
+```
 	
 ![弱类型的引用](http://ww3.sinaimg.cn/large/71aff86bjw1e61i0qotzqj20a106ywei.jpg)
 
@@ -175,10 +175,10 @@ viewController中有一个strong指针指向它所负责管理的UITableView，�
 
 property也可以用strong或weak来标记，简单地把原来写retain和assign的地方替换成strong或者weak就可以了。
 
-
-	@property (nonatomic, strong) NSString *firstName; 
-	@property (nonatomic, weak) id delegate; 
-
+```
+@property (nonatomic, strong) NSString *firstName; 
+@property (nonatomic, weak) id delegate; 
+```
 	
 	
 #### ARC的缺陷…
