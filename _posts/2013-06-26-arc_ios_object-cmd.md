@@ -53,7 +53,6 @@ release之后就被销毁了,当>1的时候…你rerelease之后还是不等于0
 		-(ClassB *) getObjB;
 		-(void) setObjB:(ClassB *) value;
 		@end
-	
 		@implementation ClassA
 		-(ClassB*) getObjB{
 	         return objB;
