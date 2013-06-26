@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ARC_iOS_Object c.md"
+title: "ARC_iOS_Object-c.md"
 description: "ios的开发学习只内存管理..关于ARC"
 category: ios
 tags: [ios, arc, object-c]
@@ -67,7 +67,7 @@ release之后就被销毁了,当>1的时候…你rerelease之后还是不等于0
 		-(void) dealloc
 		{//由于我们在class内部retain了一次（虽然是默认实现的），所以我们要在dealloc方法中release这个成员变量
 	    	[objB release];
-	      [super dealloc];
+	      	[super dealloc];
 		}
 
 
