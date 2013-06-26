@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "ARC_iOS_Object c.md"
-description: ""
-category: 
-tags: []
+description: "ios的开发学习只内存管理..关于ARC"
+category: ios
+tags: [ios, arc, object-c]
 ---
 {% include JB/setup %}
 
