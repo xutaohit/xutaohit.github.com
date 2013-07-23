@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "xiaolong's_PM"
-description: "张小龙的产品观念"
+title: xiaolong's_PM
+description: 张小龙的产品观念
 category: 产品
 tags: [产品, 微信, 移动开发]
 ---
