@@ -1,11 +1,12 @@
 ---
 layout: post
-title: xiaolong's_PM
+title: 张小龙的产品观念
 description: 张小龙的产品观念
 category: 产品
 tags: [产品, 微信, 移动开发]
 ---
 {% include JB/setup %}
+
 # 张小龙的share
 
 ## 时尚是驱动力
